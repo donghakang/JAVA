@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="20200831_Again/src"/>
+	<classpathentry kind="src" path="20200831_File/src"/>
+	<classpathentry kind="src" path="20200831_Voca/src"/>
+	<classpathentry kind="src" path="Maze/src"/>
+	<classpathentry kind="src" path="Sudoku/src"/>
+	<classpathentry kind="src" path="FileFile"/>
+	<classpathentry excluding="20200831_Again/src/|20200831_File/src/|20200831_Voca/src/|Maze/src/|Sudoku/src/|FileFile/" kind="src" path=""/>
+	<classpathentry kind="output" path="20200831_Again/out/production/20200831_Again"/>
+</classpath>

@@ -1,0 +1,153 @@
+Script started on Mon Aug 31 14:35:42 2020
+[1m[7m%[27m[1m[0m                                                                                ]7;file://Donghaui-MacBook-Pro.local/Users/donghakang/Documents/JAVA/20200831_File/tmp[0m[27m[24m[Jdonghakang@Donghaui-MacBook-Pro tmp % [K[?2004hppwd[?2004l
+/Users/donghakang/Documents/JAVA/20200831_File/tmp
+[1m[7m%[27m[1m[0m                                                                                ]7;file://Donghaui-MacBook-Pro.local/Users/donghakang/Documents/JAVA/20200831_File/tmp[0m[27m[24m[Jdonghakang@Donghaui-MacBook-Pro tmp % [K[?2004h>....                                     
+[7m/Users/donghakang[27m[K
+[7mdonghakang@Donghaui-MacBook-Pro ~ % ls [27m[K
+[7mApplications                            Public[27m[K
+[7mDesktop                                 iCloud Drive(아카이브) - 1[27m[K
+[7mDocuments                               iCloud Drive(아카이브)[27m[K
+[7mDownloads                               iCloud Drive(아카이브)[27m[K
+[7mLibrary                                 opencv_contrib[27m[K
+[7mMovies                                  opt[27m[K
+[7mMusic                                   rdev[27m[K
+[7mPictures[27m[K
+[7mdonghakang@Donghaui-MacBook-Pro ~ % cd Documents [27m[K
+[7mdonghakang@Donghaui-MacBook-Pro Documents % ls[27m[K
+[7m$RECYCLE.BIN            JMSONG                  XCode[27m[K
+[7mAnimation               League of Legends       desktop.ini[27m[K
+[7mDocument                LeetCode                github[27m[K
+[7mISO                     MATLAB                  iOS[27m[K
+[7mJAVA                    Processing              서류[27m[K
+[7mJAVA++                  Resume[27m[K
+[7mdonghakang@Donghaui-MacBook-Pro Documents % cd JAVA[27m[K
+[7mdonghakang@Donghaui-MacBook-Pro JAVA % ls[27m[K
+[7m20200831_Again  20200831_File   Maze            Sudoku[27m[K
+[7mdonghakang@Donghaui-MacBook-Pro JAVA % cd 20200831_File [27m[K
+[7mdonghakang@Donghaui-MacBook-Pro 20200831_File % ls[27m[K
+[7m20200831_File.iml       src[27m[K
+[7mdonghakang@Donghaui-MacBook-Pro 20200831_File % mkdir tmp[27m[K
+[7mdonghakang@Donghaui-MacBook-Pro 20200831_File % pwd[27m[K
+[7m/Users/donghakang/Documents/JAVA/20200831_File[27m[K
+[7mdonghakang@Donghaui-MacBook-Pro 20200831_File % cd tmp [27m[K
+[7mdonghakang@Donghaui-MacBook-Pro tmp % pwd[27m[K
+[7m/Users/donghakang/Documents/JAVA/20200831_File/tmp[27m[K
+[7mdonghakang@Donghaui-MacBook-Pro tmp % script t.txt[27m[K
+[7mScript started, output file is t.txt[27m[K
+[7mdonghakang@Donghaui-MacBook-Pro tmp % pwd[27m[K
+[7m/Users/donghakang/Documents/JAVA/20200831_File/tmp[27m[K
+[7mdonghakang@Donghaui-MacBook-Pro tmp % [27m[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K[66A[27m/[27mU[27ms[27me[27mr[27ms[27m/[27md[27mo[27mn[27mg[27mh[27ma[27mk[27ma[27mn[27mg[1B[27md[27mo[27mn[27mg[27mh[27ma[27mk[27ma[27mn[27mg[27m@[27mD[27mo[27mn[27mg[27mh[27ma[27mu[27mi[27m-[27mM[27ma[27mc[27mB[27mo[27mo[27mk[27m-[27mP[27mr[27mo[27m [27m~[27m [27m%[27m [27ml[27ms[K[1B[27mA[27mp[27mp[27ml[27mi[27mc[27ma[27mt[27mi[27mo[27mn[27ms[34P[28CPublic[K[1B[27mD[27me[27ms[27mk[27mt[27mo[27mp[59P[14C                   iCloud Drive(아카이브) - 1[K[1B[27mD[27mo[27mc[27mu[27mm[27me[27mn[27mt[27ms[57P[14C                 iCloud Drive(아카이브)[K[1B[27mD[27mo[27mw[27mn[27ml[27mo[27ma[27md[27ms[53P[18C             iCloud Drive(아카이브)[K[1B[27mL[27mi[27mb[27mr[27ma[27mr[27my[47P[26C       opencv_contrib[K[1B[27mM[27mo[27mv[27mi[27me[27ms[37P[34Copt[K[1B[27mM[27mu[27ms[27mi[27mc[39P[35Crdev[K[1B[27mP[27mi[27mc[27mt[27mu[27mr[27me[27ms[1B[27md[27mo[27mn[27mg[27mh[27ma[27mk[27ma[27mn[27mg[27m@[27mD[27mo[27mn[27mg[27mh[27ma[27mu[27mi[27m-[27mM[27ma[27mc[27mB[27mo[27mo[27mk[27m-[27mP[27mr[27mo[27m [27m~[27m [27m%[27m [27mc[27md[27m [27mD[27mo[27mc[27mu[27mm[27me[27mn[27mt[27ms[K[1B[27md[27mo[27mn[27mg[27mh[27ma[27mk[27ma[27mn[27mg[27m@[27mD[27mo[27mn[27mg[27mh[27ma[27mu[27mi[27m-[27mM[27ma[27mc[27mB[27mo[27mo[27mk[27m-[27mP[27mr[27mo[27m [27mD[27mo[27mc[27mu[27mm[27me[27mn[27mt[27ms[27m [27m%[27m [27ml[27ms[1B[27m$[27mR[27mE[27mC[27mY[27mC[27mL[27mE[27m.[27mB[27mI[27mN[41P[12CJMSONG[9C         XCode[K[1B[27mA[27mn[27mi[27mm[27ma[27mt[27mi[27mo[27mn[50P[15CLeague of Legends       desktop.ini[K[1B[27mD[27mo[27mc[27mu[27mm[27me[27mn[27mt[46P[16CLeetCode[2C              github[K[1B[27mI[27mS[27mO[48P[21CMATLAB[2C                iOS[K[1B[27mJ[27mA[27mV[27mA[50P[20CProcessing              서류[K[1B[27mJ[27mA[27mV[27mA[27m+[27m+[24P[18CResume[26C[K[1B[27md[27mo[27mn[27mg[27mh[27ma[27mk[27ma[27mn[27mg[27m@[27mD[27mo[27mn[27mg[27mh[27ma[27mu[27mi[27m-[27mM[27ma[27mc[27mB[27mo[27mo[27mk[27m-[27mP[27mr[27mo[27m [27mD[27mo[27mc[27mu[27mm[27me[27mn[27mt[27ms[27m [27m%[27m [27mc[27md[27m [27mJ[27mA[27mV[27mA[1B[27md[27mo[27mn[27mg[27mh[27ma[27mk[27ma[27mn[27mg[27m@[27mD[27mo[27mn[27mg[27mh[27ma[27mu[27mi[27m-[27mM[27ma[27mc[27mB[27mo[27mo[27mk[27m-[27mP[27mr[27mo[27m [27mJ[27mA[27mV[27mA[27m [27m%[27m [27ml[27ms[1B[27m2[27m0[27m2[27m0[27m0[27m8[27m3[27m1[27m_[27mA[27mg[27ma[27mi[27mn[27m [27m [27m2[27m0[27m2[27m0[27m0[27m8[27m3[27m1[27m_[27mF[27mi[27ml[27me[27m [27m [27m [27mM[27ma[27mz[27me[18P[12CSudoku[8C[K[1B[27md[27mo[27mn[27mg[27mh[27ma[27mk[27ma[27mn[27mg[27m@[27mD[27mo[27mn[27mg[27mh[27ma[27mu[27mi[27m-[27mM[27ma[27mc[27mB[27mo[27mo[27mk[27m-[27mP[27mr[27mo[27m [27mJ[27mA[27mV[27mA[27m [27m%[27m [27mc[27md[27m [27m2[27m0[27m2[27m0[27m0[27m8[27m3[27m1[27m_[27mF[27mi[27ml[27me[K[1B[27md[27mo[27mn[27mg[27mh[27ma[27mk[27ma[27mn[27mg[27m@[27mD[27mo[27mn[27mg[27mh[27ma[27mu[27mi[27m-[27mM[27ma[27mc[27mB[27mo[27mo[27mk[27m-[27mP[27mr[27mo[27m [27m2[27m0[27m2[27m0[27m0[27m8[27m3[27m1[27m_[27mF[27mi[27ml[27me[27m [27m%[27m [27ml[27ms[1B[27m2[27m0[27m2[27m0[27m0[27m8[27m3[27m1[27m_[27mF[27mi[27ml[27me[27m.[27mi[27mm[27ml[27m [27m [27m [27m [27m [27m [27m [27ms[27mr[27mc[1B[27md[27mo[27mn[27mg[27mh[27ma[27mk[27ma[27mn[27mg[27m@[27mD[27mo[27mn[27mg[27mh[27ma[27mu[27mi[27m-[27mM[27ma[27mc[27mB[27mo[27mo[27mk[27m-[27mP[27mr[27mo[27m [27m2[27m0[27m2[27m0[27m0[27m8[27m3[27m1[27m_[27mF[27mi[27ml[27me[27m [27m%[27m [27mm[27mk[27md[27mi[27mr[27m [27mt[27mm[27mp[1B[27md[27mo[27mn[27mg[27mh[27ma[27mk[27ma[27mn[27mg[27m@[27mD[27mo[27mn[27mg[27mh[27ma[27mu[27mi[27m-[27mM[27ma[27mc[27mB[27mo[27mo[27mk[27m-[27mP[27mr[27mo[27m [27m2[27m0[27m2[27m0[27m0[27m8[27m3[27m1[27m_[27mF[27mi[27ml[27me[27m [27m%[27m [27mp[27mw[27md[1B[27m/[27mU[27ms[27me[27mr[27ms[27m/[27md[27mo[27mn[27mg[27mh[27ma[27mk[27ma[27mn[27mg[27m/[27mD[27mo[27mc[27mu[27mm[27me[27mn[27mt[27ms[27m/[27mJ[27mA[27mV[27mA[27m/[27m2[27m0[27m2[27m0[27m0[27m8[27m3[27m1[27m_[27mF[27mi[27ml[27me[1B[27md[27mo[27mn[27mg[27mh[27ma[27mk[27ma[27mn[27mg[27m@[27mD[27mo[27mn[27mg[27mh[27ma[27mu[27mi[27m-[27mM[27ma[27mc[27mB[27mo[27mo[27mk[27m-[27mP[27mr[27mo[27m [27m2[27m0[27m2[27m0[27m0[27m8[27m3[27m1[27m_[27mF[27mi[27ml[27me[27m [27m%[27m [27mc[27md[27m [27mt[27mm[27mp[K[1B[27md[27mo[27mn[27mg[27mh[27ma[27mk[27ma[27mn[27mg[27m@[27mD[27mo[27mn[27mg[27mh[27ma[27mu[27mi[27m-[27mM[27ma[27mc[27mB[27mo[27mo[27mk[27m-[27mP[27mr[27mo[27m [27mt[27mm[27mp[27m [27m%[27m [27mp[27mw[27md[1B[27m/[27mU[27ms[27me[27mr[27ms[27m/[27md[27mo[27mn[27mg[27mh[27ma[27mk[27ma[27mn[27mg[27m/[27mD[27mo[27mc[27mu[27mm[27me[27mn[27mt[27ms[27m/[27mJ[27mA[27mV[27mA[27m/[27m2[27m0[27m2[27m0[27m0[27m8[27m3[27m1[27m_[27mF[27mi[27ml[27me[27m/[27mt[27mm[27mp[1B[27md[27mo[27mn[27mg[27mh[27ma[27mk[27ma[27mn[27mg[27m@[27mD[27mo[27mn[27mg[27mh[27ma[27mu[27mi[27m-[27mM[27ma[27mc[27mB[27mo[27mo[27mk[27m-[27mP[27mr[27mo[27m [27mt[27mm[27mp[27m [27m%[27m [27ms[27mc[27mr[27mi[27mp[27mt[27m [27mt[27m.[27mt[27mx[27mt[1B[27mS[27mc[27mr[27mi[27mp[27mt[27m [27ms[27mt[27ma[27mr[27mt[27me[27md[27m,[27m [27mo[27mu[27mt[27mp[27mu[27mt[27m [27mf[27mi[27ml[27me[27m [27mi[27ms[27m [27mt[27m.[27mt[27mx[27mt[1B[27md[27mo[27mn[27mg[27mh[27ma[27mk[27ma[27mn[27mg[27m@[27mD[27mo[27mn[27mg[27mh[27ma[27mu[27mi[27m-[27mM[27ma[27mc[27mB[27mo[27mo[27mk[27m-[27mP[27mr[27mo[27m [27mt[27mm[27mp[27m [27m%[27m [27mp[27mw[27md[1B[27m/[27mU[27ms[27me[27mr[27ms[27m/[27md[27mo[27mn[27mg[27mh[27ma[27mk[27ma[27mn[27mg[27m/[27mD[27mo[27mc[27mu[27mm[27me[27mn[27mt[27ms[27m/[27mJ[27mA[27mV[27mA[27m/[27m2[27m0[27m2[27m0[27m0[27m8[27m3[27m1[27m_[27mF[27mi[27ml[27me[27m/[27mt[27mm[27mp[1B[27md[27mo[27mn[27mg[27mh[27ma[27mk[27ma[27mn[27mg[27m@[27mD[27mo[27mn[27mg[27mh[27ma[27mu[27mi[27m-[27mM[27ma[27mc[27mB[27mo[27mo[27mk[27m-[27mP[27mr[27mo[27m [27mt[27mm[27mp[27m [27m%[K[32B[K[?2004l
+
+donghakang  console                   Mon Aug 31 11:56   still logged in
+donghakang  console                   Sun Aug 30 19:24 - 03:26  (08:01)
+donghakang  console                   Sat Aug 29 12:00 - 04:08  (16:07)
+donghakang  console                   Fri Aug 28 17:32 - 03:52  (10:19)
+donghakang  console                   Thu Aug 27 19:59 - 23:32  (03:33)
+donghakang  console                   Thu Aug 27 12:37 - 18:56  (06:18)
+donghakang  console                   Wed Aug 26 11:36 - 01:55  (14:18)
+donghakang  console                   Wed Aug 26 02:56 - 02:59  (00:02)
+donghakang  console                   Tue Aug 25 12:16 - 02:32  (14:15)
+donghakang  console                   Tue Aug 25 01:08 - 03:43  (02:35)
+
+wtmp begins Mon Aug 24 17:58 
+zsh: command not found: donghakang@Donghaui-MacBook-Pro
+zsh: permission denied: /Users/donghakang
+zsh: command not found: donghakang@Donghaui-MacBook-Pro
+zsh: command not found: Applications
+zsh: unknown file attribute: ^,
+zsh: unknown file attribute: ^!
+zsh: unknown file attribute: ^,
+zsh: command not found: Library
+zsh: command not found: Movies
+zsh: command not found: Music
+zsh: command not found: Pictures
+zsh: command not found: donghakang@Donghaui-MacBook-Pro
+zsh: command not found: donghakang@Donghaui-MacBook-Pro
+zsh: command not found: .BIN
+zsh: command not found: Animation
+zsh: command not found: Document
+zsh: command not found: ISO
+Error: Could not find or load main class Processing
+Caused by: java.lang.ClassNotFoundException: Processing
+zsh: command not found: JAVA++
+zsh: command not found: donghakang@Donghaui-MacBook-Pro
+zsh: command not found: donghakang@Donghaui-MacBook-Pro
+zsh: command not found: 20200831_Again
+zsh: command not found: donghakang@Donghaui-MacBook-Pro
+zsh: command not found: donghakang@Donghaui-MacBook-Pro
+zsh: command not found: 20200831_File.iml
+zsh: command not found: donghakang@Donghaui-MacBook-Pro
+zsh: command not found: donghakang@Donghaui-MacBook-Pro
+^[zsh: permission denied: /Users/donghakang/Documents/JAVA/20200831_File
+zsh: command not found: donghakang@Donghaui-MacBook-Pro
+zsh: command not found: donghakang@Donghaui-MacBook-Pro
+zsh: permission denied: /Users/donghakang/Documents/JAVA/20200831_File/tmp
+zsh: command not found: donghakang@Donghaui-MacBook-Pro
+Script started, output file is started,
+Script: output: No such file or directory
+
+Script done, output file is started,
+zsh: command not found: donghakang@Donghaui-MacBook-Pro
+zsh: permission denied: /Users/donghakang/Documents/JAVA/20200831_File/tmp
+zsh: command not found: donghakang@Donghaui-MacBook-Pro
+[1m[7m%[27m[1m[0m                                                                                ]7;file://Donghaui-MacBook-Pro.local/Users/donghakang/Documents/JAVA/20200831_File/tmp[0m[27m[24m[Jdonghakang@Donghaui-MacBook-Pro tmp % [K[?2004hs[?2004l
+zsh: command not found: s
+[1m[7m%[27m[1m[0m                                                                                ]7;file://Donghaui-MacBook-Pro.local/Users/donghakang/Documents/JAVA/20200831_File/tmp[0m[27m[24m[Jdonghakang@Donghaui-MacBook-Pro tmp % [K[?2004hlls[?2004l
+started,	t.txt
+[1m[7m%[27m[1m[0m                                                                                ]7;file://Donghaui-MacBook-Pro.local/Users/donghakang/Documents/JAVA/20200831_File/tmp[0m[27m[24m[Jdonghakang@Donghaui-MacBook-Pro tmp % [K[?2004hoowd[?2004l
+zsh: command not found: owd
+[1m[7m%[27m[1m[0m                                                                                ]7;file://Donghaui-MacBook-Pro.local/Users/donghakang/Documents/JAVA/20200831_File/tmp[0m[27m[24m[Jdonghakang@Donghaui-MacBook-Pro tmp % [K[?2004hppowd  p pwd[?2004l
+/Users/donghakang/Documents/JAVA/20200831_File/tmp
+[1m[7m%[27m[1m[0m                                                                                ]7;file://Donghaui-MacBook-Pro.local/Users/donghakang/Documents/JAVA/20200831_File/tmp[0m[27m[24m[Jdonghakang@Donghaui-MacBook-Pro tmp % [K[?2004hlls[?2004l
+started,	t.txt		tmp.txt
+[1m[7m%[27m[1m[0m                                                                                ]7;file://Donghaui-MacBook-Pro.local/Users/donghakang/Documents/JAVA/20200831_File/tmp[0m[27m[24m[Jdonghakang@Donghaui-MacBook-Pro tmp % [K[?2004hcclear[?2004l
+[H[2J[1m[7m%[27m[1m[0m                                                                                ]7;file://Donghaui-MacBook-Pro.local/Users/donghakang/Documents/JAVA/20200831_File/tmp[0m[27m[24m[Jdonghakang@Donghaui-MacBook-Pro tmp % [K[?2004hppwd[?2004l
+/Users/donghakang/Documents/JAVA/20200831_File/tmp
+[1m[7m%[27m[1m[0m                                                                                ]7;file://Donghaui-MacBook-Pro.local/Users/donghakang/Documents/JAVA/20200831_File/tmp[0m[27m[24m[Jdonghakang@Donghaui-MacBook-Pro tmp % [K[?2004hccd ..[?2004l
+[1m[7m%[27m[1m[0m                                                                                ]7;file://Donghaui-MacBook-Pro.local/Users/donghakang/Documents/JAVA/20200831_File[0m[27m[24m[Jdonghakang@Donghaui-MacBook-Pro 20200831_File % [K[?2004hlls[?2004l
+20200831_File.iml	src
+out			tmp
+[1m[7m%[27m[1m[0m                                                                                ]7;file://Donghaui-MacBook-Pro.local/Users/donghakang/Documents/JAVA/20200831_File[0m[27m[24m[Jdonghakang@Donghaui-MacBook-Pro 20200831_File % [K[?2004hccd ..[?2004l
+[1m[7m%[27m[1m[0m                                                                                ]7;file://Donghaui-MacBook-Pro.local/Users/donghakang/Documents/JAVA[0m[27m[24m[Jdonghakang@Donghaui-MacBook-Pro JAVA % [K[?2004hlls[?2004l
+20200831_Again	20200831_File	Maze		Sudoku		tmp
+[1m[7m%[27m[1m[0m                                                                                ]7;file://Donghaui-MacBook-Pro.local/Users/donghakang/Documents/JAVA[0m[27m[24m[Jdonghakang@Donghaui-MacBook-Pro JAVA % [K[?2004hccd tmp[?2004l
+[1m[7m%[27m[1m[0m                                                                                ]7;file://Donghaui-MacBook-Pro.local/Users/donghakang/Documents/JAVA/tmp[0m[27m[24m[Jdonghakang@Donghaui-MacBook-Pro tmp % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                ]7;file://Donghaui-MacBook-Pro.local/Users/donghakang/Documents/JAVA/tmp[0m[27m[24m[Jdonghakang@Donghaui-MacBook-Pro tmp % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                ]7;file://Donghaui-MacBook-Pro.local/Users/donghakang/Documents/JAVA/tmp[0m[27m[24m[Jdonghakang@Donghaui-MacBook-Pro tmp % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                ]7;file://Donghaui-MacBook-Pro.local/Users/donghakang/Documents/JAVA/tmp[0m[27m[24m[Jdonghakang@Donghaui-MacBook-Pro tmp % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                ]7;file://Donghaui-MacBook-Pro.local/Users/donghakang/Documents/JAVA/tmp[0m[27m[24m[Jdonghakang@Donghaui-MacBook-Pro tmp % [K[?2004hppwd[?2004l
+/Users/donghakang/Documents/JAVA/tmp
+[1m[7m%[27m[1m[0m                                                                                ]7;file://Donghaui-MacBook-Pro.local/Users/donghakang/Documents/JAVA/tmp[0m[27m[24m[Jdonghakang@Donghaui-MacBook-Pro tmp % [K[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                ]7;file://Donghaui-MacBook-Pro.local/Users/donghakang/Documents/JAVA/tmp[0m[27m[24m[Jdonghakang@Donghaui-MacBook-Pro tmp % [K[?2004h
