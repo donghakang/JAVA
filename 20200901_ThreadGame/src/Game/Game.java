@@ -5,13 +5,13 @@ import java.util.Scanner;
 public class Game {
     Vocab v = new Vocab();
     int totalHealth = 100;
-    
+
     public void battle(Player att, Player def) {
         Scanner scan = new Scanner(System.in);
         String input;
         String word = this.v.pick();
         System.out.println("Type '" + word + "' !!!");
-        
+
         while (true) {
             System.out.print("   ㄴ ");
             input = scan.nextLine();
@@ -29,13 +29,13 @@ public class Game {
     public void play() {
         Player player1 = new Player(true, totalHealth);
         Player player2 = new Player(false, totalHealth);
-        TimeThread th  = new TimeThread();
+        TimeThread th = new TimeThread();
 
         int round = 1;
         int energy = 0;
 
         System.out.println("게임에 오신거를 환영합니다. ");
-        th.start();
+        th.start(); // thread 시작
         while (true) {
 
             if (player1.health <= 0) {
@@ -54,39 +54,39 @@ public class Game {
                 System.out.println("  ** Player1 (HP: " + player1.health + "/" + totalHealth + ")");
                 System.out.println("     Player2 (HP: " + player2.health + "/" + totalHealth + ")");
                 System.out.println();
-                
+
                 th.sec = 0;
                 th.t = true;
                 battle(player1, player2);
                 th.t = false;
 
                 energy = th.sec;
-                System.out.println("TIME : " + energy);
+                System.out.println("TIME : " + energy + "초");
                 player2.changeHealth(energy);
                 player2.limitHealth(totalHealth);
             } else {
                 System.out.println("     Player1 (HP: " + player1.health + "/" + totalHealth + ")");
                 System.out.println("  ** Player2 (HP: " + player2.health + "/" + totalHealth + ")");
                 System.out.println();
-                
+
                 th.sec = 0;
                 th.t = true;
                 battle(player2, player1);
                 th.t = false;
 
                 energy = th.sec;
-                System.out.println("TIME : " + energy);
+                System.out.println("TIME : " + energy + "초");
                 player1.changeHealth(energy);
                 player1.limitHealth(totalHealth);
             }
-    
+
             round += 1;
             player1.isTurn = !player1.isTurn;
             player2.isTurn = !player2.isTurn;
             System.out.println();
             System.out.println();
         }
-        
+
         th.gameOver = false;
     }
 }

@@ -13,7 +13,7 @@ public class Player {
 
     // 공격력. 10~20 사이의 공격이다.
     public int power() {
-        return new Random().nextInt(10) + 10;
+        return new Random().nextInt(11) + 10;           // 10 ~ 20
     }
 
     // 생명력 조절
