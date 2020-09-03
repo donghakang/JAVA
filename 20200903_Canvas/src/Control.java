@@ -1,5 +1,3 @@
-package main;
-
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Toolkit;
@@ -14,26 +12,43 @@ public class Control {
 
     public void init() {
         Dimension scr = Toolkit.getDefaultToolkit().getScreenSize();         // 스크린 사이즈 출력
-        System.out.println(scr.width + " : "+scr.height);
 
-        int h = (int)scr.height / 3;
-        int w = (int)scr.width  / 3;
-        
-        int posX = calculatePos(scr.width, w);
-        int posY = calculatePos(scr.height, h);
+        int h = (int)scr.height / 2;
+        int w = (int)scr.width  / 2;
 
         Frame frame = new Frame("첫 번째 AWT");
-        frame.setLocation(posX, posY);              // 스크린 위치
-        frame.setSize(w, h);                        // 스크린 사이즈
-        frame.setResizable(false);                  // 스크린의 사이즈를 변경 할 수 있는지 
+        setLayout(frame);  
+        frame.setLayout(null);
+
+
+        MyCanvas canvas = new MyCanvas(w, h);
         
-        setLayout(frame);                           
+        canvas.setSize(w, h);
+        canvas.setLocation(0, 0);
+
+        
+        frame.add(canvas);                  // canvas 를 프레임에 위치
+
         frame.setVisible(true);
     }
 
 
 
     private void setLayout(Frame frame) {
+        Dimension scr = Toolkit.getDefaultToolkit().getScreenSize();         // 스크린 사이즈 출력
+        System.out.println(scr.width + " : "+scr.height);
+
+        int h = (int)scr.height / 2;
+        int w = (int)scr.width  / 2;
+        
+        int posX = calculatePos(scr.width, w);
+        int posY = calculatePos(scr.height, h);
+
+        frame.setLocation(posX, posY);              // 스크린 위치
+        frame.setSize(w, h);                        // 스크린 사이즈
+        frame.setResizable(false);                  // 스크린의 사이즈를 변경 할 수 있는지 
+
+
         frame.addWindowListener(new WindowListener() {
 
             @Override
