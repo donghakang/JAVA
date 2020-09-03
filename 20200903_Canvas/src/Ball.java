@@ -12,7 +12,7 @@ public class Ball {
     boolean isRight;
     Color c;
 
-    public Ball(final int posX, final int posY, final int size) {
+    public Ball(int posX, int posY, int size) {
         this.posX = posX;
         this.posY = posY;
         this.velX = 0.0;
@@ -21,6 +21,22 @@ public class Ball {
         this.isRight = true;
     }
 
+    public Ball(int w) {
+        this.posX = new Random().nextInt(w);
+        this.posY = new Random().nextInt(200);
+        this.size = new Random().nextInt(30) + 30;
+
+        int vel = new Random().nextInt(4) - 8;
+        if (vel > 0) this.isRight = true;
+        else this.isRight = false;
+        this.velX = vel;
+
+        int red = new Random().nextInt(100);
+        int green = new Random().nextInt(100);
+        int blue = new Random().nextInt(100);
+
+        this.c = new Color(red + 155, green + 155, blue + 155, 255);
+    }
 
     public void setW(final int w) {
         this.w = w;
@@ -41,8 +57,6 @@ public class Ball {
     public void setDirection(final boolean isRight) {
         this.isRight = isRight;
     }
-
-    
 
     public void update() {
         this.posY = (int)(this.posY + this.velY * 0.01);
