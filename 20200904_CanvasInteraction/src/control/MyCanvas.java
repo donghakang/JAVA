@@ -1,30 +1,39 @@
 package control;
 
 import physics.Ball;
+import physics.MainBall;
 
 import java.awt.Canvas;
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
-import java.awt.Paint;
+
 import java.util.ArrayList;
 import java.util.Random;
 
 public class MyCanvas extends Canvas {
-    ArrayList<Ball> balls = new ArrayList<Ball>();
-    MyThread th = null;
+    MyThread th;
+    ArrayList<Ball> balls = new ArrayList<>();
+    MainBall mainBall;
+    int canvasX;
+    int canvasY;
+    boolean isBounce = false;
+
 
     public MyCanvas(int w, int h) {
+        this.canvasX = w;
+        this.canvasY = h;
+
+
         int posX, posY;
         double velX, velY;
         int size;
         Color color;
-        for (int i = 0; i < 20; i ++) {
-            posX = new Random().nextInt(w);
+        for (int i = 0; i < 0; i ++) {
+            posX = new Random().nextInt(this.canvasX);
             posY = new Random().nextInt(200);
-            velX = new Random().nextInt(4) - 8;
+            velX = new Random().nextInt(4);
             velY = 0.0;
             size = new Random().nextInt(30) + 30;
 
@@ -37,23 +46,55 @@ public class MyCanvas extends Canvas {
             Ball ball = new Ball(posX, posY, velX, velY, size, color);
             balls.add(ball);
         }
+
+        mainBall = new MainBall(0, 0, 0, 0, 0, null);
+
         th = new MyThread();
         th.start();
     }
 
+    public void addBall() {
+        int posX, posY;
+        double velX, velY;
+        int size;
+        Color color;
 
-    Image bufferImage;
-    Graphics buffg;
+        posX = new Random().nextInt(200);
+        posY = new Random().nextInt(200);
+        velX = new Random().nextInt(4) - 8;
+        velY = 0.0;
+        size = new Random().nextInt(30) + 30;
+
+        int red   = new Random().nextInt(100);
+        int green = new Random().nextInt(100);
+        int blue  = new Random().nextInt(100);
+
+        color = new Color(red + 155, green + 155, blue + 155, 255);
+
+        Ball ball = new Ball(posX, posY, velX, velY, size, color);
+        balls.add(ball);
+    }
+
 
     @Override
     public void paint(Graphics g) {
-        if (buffg == null) {
-            bufferImage = createImage(getWidth(), getHeight());
-            if (bufferImage == null)
-                System.out.println("���� ����");
-            else
-                buffg = bufferImage.getGraphics();
+        Graphics2D g2 = (Graphics2D) g;
+        setBackground(new Color(0, 0, 255, 40));
+
+        g2.setColor(Color.yellow);
+        for (int i = 0; i < 10; i ++) {
+            g2.fillOval(new Random().nextInt(this.canvasX), new Random().nextInt((int)(this.canvasY / 2)), 2, 2);
         }
+
+
+        for (int i = 0; i < balls.size(); i ++) {
+            Ball b = balls.get(i);
+            g2.setColor(b.color);
+            g2.fillOval(b.posX, b.posY, b.size, b.size);
+        }
+        
+        g2.setColor(mainBall.color);
+        g2.fillOval(mainBall.posX, mainBall.posY, mainBall.size, mainBall.size);
     }
 
     /**
@@ -74,19 +115,15 @@ public class MyCanvas extends Canvas {
     **/
 
 
-    //	int speedX = 5;
-//	int speedY = 5;
-//	int posX = 200;
-//	int posY = 120;
     class MyThread extends Thread {
         @Override
         public void run() {
             while (true) {
-
                 for (int i = 0; i < balls.size(); i++) {
                     Ball b = balls.get(i);
                     b.update();
                 }
+                mainBall.update();
 
                 repaint();
                 try {

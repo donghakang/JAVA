@@ -6,11 +6,12 @@ import java.awt.*;
 
 public class Ball extends Control {
 
-    int posX, posY;
-    double velX, velY;
-    int size;
-    Color color;
-    boolean isRight;
+    public int posX;
+	public int posY;
+    public double velX, velY;
+    public int size;
+    public Color color;
+    public boolean isRight;
 
 
     public Ball(int posX, int posY, double velX, double velY, int size, Color color) {
