@@ -7,14 +7,13 @@ import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Image;
-
 import java.util.ArrayList;
 import java.util.Random;
 
 public class MyCanvas extends Canvas {
     MyThread th;
     ArrayList<Ball> balls = new ArrayList<>();
+    ArrayList<Fire> fire = new ArrayList<>();
     MainBall mainBall;
     int canvasX;
     int canvasY;
@@ -75,6 +74,9 @@ public class MyCanvas extends Canvas {
         balls.add(ball);
     }
 
+    public void fire() {
+
+    }
 
     @Override
     public void paint(Graphics g) {
@@ -92,7 +94,7 @@ public class MyCanvas extends Canvas {
             g2.setColor(b.color);
             g2.fillOval(b.posX, b.posY, b.size, b.size);
         }
-        
+
         g2.setColor(mainBall.color);
         g2.fillOval(mainBall.posX, mainBall.posY, mainBall.size, mainBall.size);
     }

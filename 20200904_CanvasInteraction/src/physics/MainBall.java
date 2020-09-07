@@ -7,10 +7,12 @@ public class MainBall extends Ball {
     public boolean isLeft  = false;
     public boolean isUp    = false;
     public boolean isDown  = false;
+    public boolean isFire    = false;
 
     public MainBall(int posX, int posY, int velX, int velY, int size, Color color) {
         super(200, 200, 0, 0, 70, Color.red);
     }
+
 
     public void limit() {
         int canvasX = getW();
@@ -29,4 +31,5 @@ public class MainBall extends Ball {
         
         this.limit();
     }
+
 }

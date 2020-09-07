@@ -9,37 +9,34 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
 public class Control {
-    public int w;           // 화면 사이즈
-    public int h;
+    public int screenX;           // 화면 사이즈
+    public int screenY;
     public int canvasX;
     public int canvasY;
+    
 
     public Control() {
         Dimension scr = Toolkit.getDefaultToolkit().getScreenSize();
-        this.w = scr.width;
-        this.h = scr.height;
-        this.canvasX = this.w / 2;
-        this.canvasY = this.h / 2;
+        this.screenX = scr.width;
+        this.screenY = scr.height;
+        this.canvasX = this.screenX / 2;
+        this.canvasY = this.canvasX;
     }
 
-    public int getW() {
-        return this.canvasX;
-    }
 
-    public int getH() {
-        return this.canvasY;
-    }
-
-    public void init() {
+    public void play() {
+        // Frame Setup
         Frame frame = new Frame("AWT");
         setLayout(frame);                   // frame setup
         frame.setLayout(null);
 
+        // Canvas Setup
+        GameCanvas canvas = new GameCanvas(this.canvasX, this.canvasY);
 
-        MyCanvas can = new MyCanvas(this.w, this.h);
-        can.setSize(this.canvasX, this.canvasY);
-        can.setLocation(0, 0);
-        can.addKeyListener(new KeyListener() {
+        canvas.setSize(this.canvasX, this.canvasY);
+        canvas.setLocation(0, 0);
+
+        canvas.addKeyListener(new KeyListener() {
 
             @Override
             public void keyTyped(KeyEvent e) {
@@ -50,59 +47,48 @@ public class Control {
             @Override
             public void keyReleased(KeyEvent e) {
                 switch (e.getKeyCode()) {
-                    case 32:
-                        can.mainBall.isFire = false;
-                        break;
                     case 39:
-                        can.mainBall.isRight = false;
+                        canvas.actor.ball.isRight = false;
                         break;
                     case 37:
-                        can.mainBall.isLeft = false;
-                        break;
-                    case 38:
-                        can.mainBall.isUp = false;
-                        break;
-                    case 40:
-                        can.mainBall.isDown = false;
+                        canvas.actor.ball.isLeft = false;
                         break;
                 }
             }
 
             @Override
             public void keyPressed(KeyEvent e) {
-                System.out.println("P: " + e.getKeyCode());
+                System.out.println(e.getKeyCode());
                 switch (e.getKeyCode()) {
-                    case 10:
-                        can.addBall();
+                    case 89:
+                        canvas.actor.init();
                         break;
-                    case 32:
-                        can.mainBall.isFire = true;
+                    case 32:            // space bar
+                        canvas.isGameMode = !canvas.isGameMode;
+                        canvas.actor.isGameMode = !canvas.actor.isGameMode;
                         break;
                     case 39:
-                        can.mainBall.isRight = true;
+                        canvas.actor.ball.isRight = true;
                         break;
                     case 37:
-                        can.mainBall.isLeft = true;
-                        break;
-                    case 38:
-                        can.mainBall.isUp = true;
-                        break;
-                    case 40:
-                        can.mainBall.isDown = true;
+                        canvas.actor.ball.isLeft = true;
                         break;
                 }
 
             }
         });
 
-        frame.add(can);
+        // Frame 출력
+        frame.add(canvas);
         frame.setVisible(true);
-
     }
 
+
+
+
     private void setLayout(Frame frame) {
-        int posX = this.w / 2 - (this.canvasX / 2);
-        int posY = this.h / 2 - (this.canvasY / 2);
+        int posX = this.screenX / 2 - (this.canvasX / 2);
+        int posY = this.screenY / 2 - (this.canvasY / 2);
         frame.setLocation(posX, posY);
         frame.setSize(this.canvasX, this.canvasY);
         frame.setResizable(false);
