@@ -1,10 +1,6 @@
 package control;
 
-import java.io.File;
-import java.io.IOException;
-import java.awt.Image;
-import java.awt.image.*;
-import javax.imageio.ImageIO;
+import java.awt.*;
 
 public class Ball {
     public int posX, posY;
@@ -21,8 +17,7 @@ public class Ball {
     public int bounceCount = 0;
     public boolean isAlive = true;
 
-
-    BufferedImage img;
+    public Image img;
 
     public Ball(int canvasX, int canvasY) {
         this.canvasX = canvasX;
@@ -34,14 +29,6 @@ public class Ball {
         this.isRight = false;
         this.isLeft = false;
         this.isFalling = true;
-
-        try {
-            this.img = ImageIO.read(new File("./img/img1.png"));
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            System.out.println("READ FAIL");
-            System.out.println("Working Directory = " + System.getProperty("user.dir"));
-        }
     }
 
     // 벽돌에 부딪힐때, 공은 위로 솟는다
@@ -76,6 +63,10 @@ public class Ball {
             this.isFalling = true;
         }
 
+    }
+
+    public void setImg(Image i) {
+        this.img = i;
     }
 
     

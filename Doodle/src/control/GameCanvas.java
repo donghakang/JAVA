@@ -1,15 +1,6 @@
 package control;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
-
-
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Random;
-
 
 public class GameCanvas extends Canvas {
     // 환경
@@ -24,7 +15,8 @@ public class GameCanvas extends Canvas {
     Actors actor;
 
     public boolean isGameMode;          // 실행화면 혹은 게임화면
-    BufferedImage img;
+    public Image img;
+    public Image player_img;
 
     public GameCanvas(int canvasX, int canvasY) {
         this.canvasX = canvasX;
@@ -40,15 +32,12 @@ public class GameCanvas extends Canvas {
 
 
     public void init() {
-        try {
-            this.img = ImageIO.read(new File("./img/launch_img.png"));
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            System.out.println("READ FAIL");
-            System.out.println("Working Directory = " + System.getProperty("user.dir"));
-        }
-        
+
         actor = new Actors(this.canvasX, this.canvasY);
+
+        this.img = (getToolkit().getDefaultToolkit()).getImage("./img/launch_img.png");
+        this.player_img = (getToolkit().getDefaultToolkit()).getImage("./img/img1.png");
+
         this.isBrighter = false;
         this.bgColorTmp = 0;
         
@@ -117,7 +106,7 @@ public class GameCanvas extends Canvas {
                 updateBrickColor();
                 setBackground(new Color(this.bgColor[0], this.bgColor[1], this.bgColor[2], 255));
             } catch (IllegalArgumentException e) {
-                System.out.println(this.bgColor[0] + "   " + this.bgColor[1] + "    " + this.bgColor[2]);
+                // 아무일 안일어난다.
             }
 
             for (int i = 0; i < actor.bricks.size(); i++) {
@@ -127,8 +116,7 @@ public class GameCanvas extends Canvas {
             }
         
             // Player
-            g2.drawImage(actor.ball.img, actor.ball.posX - 25, actor.ball.posY - 25, this);
-
+            g2.drawImage(this.player_img, actor.ball.posX - 25, actor.ball.posY - 25, 99, 105, this);
 
             g2.setFont(font2);
             g2.setColor(Color.white);
@@ -149,7 +137,7 @@ public class GameCanvas extends Canvas {
             this.actor.score = 0;
             setBackground(new Color(this.bgColor[0], this.bgColor[1], this.bgColor[2], 255));
 
-            g2.drawImage(this.img, 0, 0, this);
+            g2.drawImage(this.img, 0, 0, this.canvasX/2, this.canvasY/2, this);
 
             g2.setFont(font);
             g2.setColor(Color.white);
