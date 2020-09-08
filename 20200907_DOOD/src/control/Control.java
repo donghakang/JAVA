@@ -1,5 +1,7 @@
 package control;
 
+
+
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Toolkit;
@@ -8,36 +10,36 @@ import java.awt.event.KeyListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
+
 public class Control {
     public int screenX;           // 화면 사이즈
     public int screenY;
     public int canvasX;
     public int canvasY;
-    
+
+    private boolean isGame;
+
 
     public Control() {
         Dimension scr = Toolkit.getDefaultToolkit().getScreenSize();
         this.screenX = scr.width;
         this.screenY = scr.height;
-        this.canvasX = this.screenX / 2;
-        this.canvasY = this.canvasX;
+    
+        this.canvasX = 700;
+        this.canvasY = 700;
+        
+
+        this.isGame = false;
     }
 
-
-    public void play() {
-        // Frame Setup
-        Frame frame = new Frame("AWT");
-        setLayout(frame);                   // frame setup
-        frame.setLayout(null);
-
-        // Canvas Setup
-        GameCanvas canvas = new GameCanvas(this.canvasX, this.canvasY);
-
-        canvas.setSize(this.canvasX, this.canvasY);
-        canvas.setLocation(0, 0);
-
-        canvas.addKeyListener(new KeyListener() {
-
+    public void init() {
+        Frame frame1 = new Frame("hello");
+        Frame frame2 = new Frame("boy");
+        setLayout(frame1);
+        setLayout(frame2);
+        frame1.setLayout(null);
+        frame2.setLayout(null);
+        frame1.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
                 // TODO Auto-generated method stub
@@ -46,43 +48,59 @@ public class Control {
 
             @Override
             public void keyReleased(KeyEvent e) {
-                switch (e.getKeyCode()) {
-                    case 39:
-                        canvas.actor.ball.isRight = false;
-                        break;
-                    case 37:
-                        canvas.actor.ball.isLeft = false;
-                        break;
-                }
+        
             }
 
             @Override
             public void keyPressed(KeyEvent e) {
                 switch (e.getKeyCode()) {
-                    case 89:
-                        canvas.actor.init();
+                    case 89:                    // Y key
                         break;
-                    case 32:            // space bar
-                        canvas.isGameMode = !canvas.isGameMode;
-                        canvas.actor.isGameMode = !canvas.actor.isGameMode;
+                    case 32:                    // space bar
+                        isGame = !isGame;
                         break;
                     case 39:
-                        canvas.actor.ball.isRight = true;
                         break;
                     case 37:
-                        canvas.actor.ball.isLeft = true;
                         break;
                 }
 
             }
         });
 
-        // Frame 출력
-        frame.add(canvas);
-        frame.setVisible(true);
+        frame2.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+        
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                switch (e.getKeyCode()) {
+                    case 89:                    // Y key
+                        break;
+                    case 32:                    // space bar
+                        isGame = !isGame;
+                        break;
+                    case 39:
+                        break;
+                    case 37:
+                        break;
+                }
+
+            }  
+        });
+        
+        frame1.setVisible(isGame);
+        frame2.setVisible(!isGame);
+
     }
-
-
 
 
     private void setLayout(Frame frame) {
@@ -125,4 +143,5 @@ public class Control {
             }
         });
     }
+
 }

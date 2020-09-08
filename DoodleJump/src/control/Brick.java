@@ -10,10 +10,10 @@ public class Brick extends Physics {
     int canvasX;
     int canvasY;
 
-    int width = 100;
-    int height = 20;
+    public int width = 80;
+    public int height = 10;
 
-    Color color;
+    public Color color;
 
     
 

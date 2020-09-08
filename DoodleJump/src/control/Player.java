@@ -6,7 +6,7 @@ public class Player extends Physics {
     
     public int canvasX, canvasY;
 
-    public int size = 50;
+    public int size = 20;
 
     public boolean isRight;
     public boolean isLeft;
@@ -24,6 +24,7 @@ public class Player extends Physics {
         setPosY(canvasY / 4 - (this.size / 2));
         setVelX(0.0);
         setVelY(0.0);
+        this.size = 50;
         this.isRight = false;
         this.isLeft = false;
         this.isFalling = true;

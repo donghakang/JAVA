@@ -47,7 +47,7 @@ public class Physics {
 
 
     // Line Circle collision detection
-    boolean lineCircle(double x1, double y1, double x2, double y2, double cx, double cy, double r) {
+    public boolean lineCircle(double x1, double y1, double x2, double y2, double cx, double cy, double r) {
 
         boolean inside1 = pointCircle(x1,y1, cx,cy,r);
         boolean inside2 = pointCircle(x2,y2, cx,cy,r);
@@ -77,7 +77,7 @@ public class Physics {
 
 
     // POINT/CIRCLE
-    boolean pointCircle(double px, double py, double cx, double cy, double r) {
+    public boolean pointCircle(double px, double py, double cx, double cy, double r) {
         double distX = px - cx;
         double distY = py - cy;
         double distance = Math.sqrt( (distX*distX) + (distY*distY) );
@@ -90,7 +90,7 @@ public class Physics {
 
 
     // LINE/POINT
-    boolean linePoint(double x1, double y1, double x2, double y2, double px, double py) {
+    public boolean linePoint(double x1, double y1, double x2, double y2, double px, double py) {
         double d1 = dist(px,py, x1,y1);
         double d2 = dist(px,py, x2,y2);
 

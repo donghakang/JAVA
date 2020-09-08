@@ -1,6 +1,6 @@
 package main;
 
-import control.Control;
+import canvas.Control;
 
 public class Main {
     public static void main(String[] args) {

@@ -22,11 +22,18 @@ import javax.swing.JLabel;
 public class Control {
 
     public void init() {
+        Dimension scr = Toolkit.getDefaultToolkit().getScreenSize();
+        int width = scr.width / 2;
+        int height = scr.height / 2;
+        int posX = scr.width / 2 - (width / 2);
+        int posY = scr.height / 2 - (height / 2);
+
+
         Frame frame = new Frame("AWT");
         setLayout(frame);
         frame.setLayout(null);
 
-        Font font = new Font("serif",Font.PLAIN, 30);
+        Font font = new Font("arial",Font.PLAIN, 30);
 
         Label lb1 = new Label();
         lb1.setText("안녕");
@@ -59,8 +66,9 @@ public class Control {
 
         Label contentLb = new Label();
         contentLb.setText("--");
-        contentLb.setBounds(260, 300, 400, 150);
+        contentLb.setBounds(0, height/2, width, 100);
         contentLb.setFont(font);
+        contentLb.setAlignment(1);
         frame.add(contentLb);
 
         btn.addActionListener(new ActionListener() {
@@ -77,9 +85,10 @@ public class Control {
     }
 
     private void setLayout(Frame frame) {
-        int width = 700;
-        int height = 600;
+
         Dimension scr = Toolkit.getDefaultToolkit().getScreenSize();
+        int width = scr.width / 2;
+        int height = scr.height / 2;
         int posX = scr.width / 2 - (width / 2);
         int posY = scr.height / 2 - (height / 2);
         frame.setLocation(posX, posY);
