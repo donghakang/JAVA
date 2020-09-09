@@ -19,11 +19,10 @@ public class GameCanvas extends Canvas {
     // 게임
     Actor actor;
 
-    public boolean isGameMode;          // 실행화면 혹은 게임화면
+    public boolean isGameMode; // 실행화면 혹은 게임화면
+    public SaveData data;
     public Image img;
     public Image player_img;
-
-
 
     // MARK: 설정
     public GameCanvas(int canvasX, int canvasY) {
@@ -33,21 +32,29 @@ public class GameCanvas extends Canvas {
         this.bgColor[0] = 12;
         this.bgColor[1] = 6;
         this.bgColor[2] = 42;
+
+        init();
     }
 
     public void init() {
-
+        data  = new SaveData();
         actor = new Actor(this.canvasX, this.canvasY);
+    }
 
+    public void setup() {
         this.img = (getToolkit().getDefaultToolkit()).getImage("./img/launch_img.png");
         this.player_img = (getToolkit().getDefaultToolkit()).getImage("./img/img1.png");
 
         this.isBrighter = false;
         this.bgColorTmp = 0;
 
-        TimeThread th = new TimeThread();
-        th.start();
+        TimeThread th1 = new TimeThread();
+        th1.start();
+
+        // ScoreThread th2 = new ScoreThread();
+        // th2.start();
     }
+
 
 
     // MARK: 꾸미기
@@ -56,7 +63,6 @@ public class GameCanvas extends Canvas {
             this.actor.score += 3;
         }
     }
-
 
     public void updateBackground() {
         int tmp = 0;
@@ -83,20 +89,19 @@ public class GameCanvas extends Canvas {
         tmp = this.actor.score / 10 - (200 * this.bgColorTmp);
 
         if (this.isBrighter) {
-            Color c = new Color (tmp + 0, tmp + 55, tmp + 20);
-            for (int i = 0; i < this.actor.bricks.size(); i ++) {
+            Color c = new Color(tmp + 0, tmp + 55, tmp + 20);
+            for (int i = 0; i < this.actor.bricks.size(); i++) {
 
                 this.actor.bricks.get(i).color = c;
             }
         } else {
-            Color c = new Color (200 - tmp, 255 - tmp, 220 - tmp);
-            for (int i = 0; i < this.actor.bricks.size(); i ++) {
+            Color c = new Color(200 - tmp, 255 - tmp, 220 - tmp);
+            for (int i = 0; i < this.actor.bricks.size(); i++) {
 
                 this.actor.bricks.get(i).color = c;
             }
         }
     }
-
 
     void drawString(Graphics2D g, String text, int x, int y) {
         for (String line : text.split("\n"))
@@ -108,13 +113,18 @@ public class GameCanvas extends Canvas {
         Font font2 = new Font("Arial", Font.PLAIN, 20);
         Font f = new Font("Arial", Font.PLAIN, 10);
 
-        setBackground(new Color(this.bgColor[0], this.bgColor[1], this.bgColor[2], 255));
-        g2.drawImage(this.img, 0, 0, this.canvasX/2, this.canvasY/2, this);
+        try {
+            setBackground(new Color(this.bgColor[0], this.bgColor[1], this.bgColor[2], 255));
+        } catch (IllegalArgumentException e) {
+            setBackground(new Color(12, 6, 42));
+        }
+
+        g2.drawImage(this.img, 0, 0, this.canvasX / 2, this.canvasY / 2, this);
 
         g2.setFont(font);
         g2.setColor(Color.white);
         g2.drawString("D O O D L E", this.canvasX / 6 + 20, this.canvasY / 2 - 100);
-        g2.drawString("   E G I  ", this.canvasX/2 + 35, this.canvasY/2);
+        g2.drawString("   E G I  ", this.canvasX / 2 + 35, this.canvasY / 2);
 
         g2.setFont(font2);
         g2.setColor(Color.gray);
@@ -122,15 +132,11 @@ public class GameCanvas extends Canvas {
         String s = "Press <start> to play";
         g2.drawString(s, this.canvasX / 2 - fontMetrics.stringWidth(s) / 2, this.canvasY * 3 / 4);
 
-
-        
         g2.setFont(f);
         g2.setColor(Color.yellow);
-        g2.drawString("참고로, 애기는 저의 집 강아지 이름입니다.", this.canvasX * 1 / 2 + 100, this.canvasY/2 + 100);
-        g2.drawString("13살 입니다.", this.canvasX * 1 / 2 + 100, this.canvasY/2 + 120);
+        g2.drawString("참고로, 애기는 저의 집 강아지 이름입니다.", this.canvasX * 1 / 2 + 100, this.canvasY / 2 + 100);
+        g2.drawString("13살 입니다.", this.canvasX * 1 / 2 + 100, this.canvasY / 2 + 120);
     }
-    
-
 
     private void gameOverView(Graphics2D g2) {
         Font font = new Font("Arial", Font.BOLD, 50);
@@ -150,7 +156,7 @@ public class GameCanvas extends Canvas {
         g2.drawString(s2, this.canvasX / 2 - fontMetrics2.stringWidth(s2) / 2, this.canvasY * 3 / 4);
     }
 
-    public int returnScore(){
+    public int returnScore() {
         return this.actor.score;
     }
 
@@ -173,7 +179,8 @@ public class GameCanvas extends Canvas {
 
         // Player
         g2.drawImage(this.player_img, actor.player.posX - 15, actor.player.posY - 20, 80, 85, this);
-        // g2.fillOval(actor.player.posX, actor.player.posY, actor.player.size, actor.player.size);
+        // g2.fillOval(actor.player.posX, actor.player.posY, actor.player.size,
+        // actor.player.size);
         g2.setFont(font2);
         g2.setColor(Color.white);
         g2.drawString("Score: " + this.actor.score, 50, 90);
@@ -183,7 +190,7 @@ public class GameCanvas extends Canvas {
     @Override
     public void paint(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
-        
+
         if (this.isGameMode) {
             playView(g2);
             if (!actor.player.isAlive) {
@@ -194,8 +201,6 @@ public class GameCanvas extends Canvas {
         }
     }
 
-
-
     class TimeThread extends Thread {
         @Override
         public void run() {
@@ -203,14 +208,63 @@ public class GameCanvas extends Canvas {
                 actor.update();
                 scoreAdd();
                 repaint();
+
                 try {
                     Thread.sleep(10);
                 } catch (InterruptedException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
-                
+
             }
         }
     }
+
+    /**  
+    class ScoreThread extends Thread {
+        String scoreboard = "";
+        String playerName = "";
+
+        @Override
+        public void run() {
+            while (true) {
+                if (isGameMode) {
+                    // 게임모드 
+                    if (!actor.player.isAlive) {
+                        // 죽었을때
+                        if (data.isSaved == false) {
+                            playerName = actor.player.getName();
+                            if (!playerName.equals("")) {
+                                // 플레이어 이름이 있다면,
+                                data.addScore(actor.score);
+                                // System.out.println(actor.player.getName() + "   " + actor.score);
+                            }
+                            
+                            data.readScore();
+                            scoreboard = data.printScoreboard();
+                            
+                            if (scoreboard == null) {
+                                //만약 아무 데이터 없다면.
+                                scoreboard = "";
+                            }
+                            // System.out.println(scoreboard);
+
+                            data.isSaved = true;
+                        }
+                    }
+                } else {
+                    // 게임이 시작할때
+                    data.isSaved = false;
+                }
+
+                try {
+                    Thread.sleep(10);
+                } catch (InterruptedException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+    */
 }

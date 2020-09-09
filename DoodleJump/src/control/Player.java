@@ -17,6 +17,8 @@ public class Player extends Physics {
     public int bounceCount = 0;
     public boolean isAlive = true;
 
+    // id
+    private String name;
 
     public Player(int canvasX, int canvasY) {
         setCanvas(canvasX, canvasY);
@@ -28,6 +30,15 @@ public class Player extends Physics {
         this.isRight = false;
         this.isLeft = false;
         this.isFalling = true;
+        this.name = "";
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
 
