@@ -23,6 +23,8 @@ public class GameCanvas extends Canvas {
     public Image img;
     public Image player_img;
 
+
+
     // MARK: 설정
     public GameCanvas(int canvasX, int canvasY) {
         this.canvasX = canvasX;
@@ -148,7 +150,9 @@ public class GameCanvas extends Canvas {
         g2.drawString(s2, this.canvasX / 2 - fontMetrics2.stringWidth(s2) / 2, this.canvasY * 3 / 4);
     }
 
-
+    public int returnScore(){
+        return this.actor.score;
+    }
 
     // 게임 플레이
     private void playView(Graphics2D g2) {
@@ -196,7 +200,6 @@ public class GameCanvas extends Canvas {
         @Override
         public void run() {
             while (true) {
-
                 actor.update();
                 scoreAdd();
                 repaint();
@@ -206,6 +209,7 @@ public class GameCanvas extends Canvas {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
+                
             }
         }
     }

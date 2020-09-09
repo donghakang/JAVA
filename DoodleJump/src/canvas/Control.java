@@ -17,6 +17,7 @@ public class Control {
     public int canvasX;
     public int canvasY;
 
+    public boolean save;
 
     public Control() {
         Dimension scr = Toolkit.getDefaultToolkit().getScreenSize();
@@ -24,6 +25,8 @@ public class Control {
         this.screenY = scr.height;
         this.canvasX = 700;
         this.canvasY = 700;
+
+        this.save = false;
     }
 
     public void play() {
@@ -40,10 +43,10 @@ public class Control {
         // Frame 출력
         frame.add(canvas); 
         frame.setVisible(true);
-    }
 
-
-    private void initFrame(Frame frame) {
+        while(true) {
+            System.out.println(canvas.isGameMode + ", " + canvas.actor.player.isAlive);
+        }
         
     }
 
