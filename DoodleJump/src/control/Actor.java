@@ -34,14 +34,11 @@ public class Actor {
 
             this.bricks.add(brick);
 
-            
         }
         this.player = new Player(this.canvasX, this.canvasY);
     }
 
-
-
-
+    
 
 
     // 부딪히면 true

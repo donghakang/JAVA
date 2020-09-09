@@ -33,6 +33,7 @@ public class Control {
 
         this.save = false;
 
+        this.canvas = new GameCanvas(this.canvasX, this.canvasY);
     }
 
     public void play() {
@@ -42,7 +43,6 @@ public class Control {
         frame.setLayout(null);
 
         // Canvas Setup
-        canvas = new GameCanvas(this.canvasX, this.canvasY);
         initFrame(frame);
 
         // Frame 출력
@@ -79,12 +79,13 @@ public class Control {
                 switch (e.getKeyCode()) {
                     case 89:                    // Y key
                         canvas.actor.init();
+                        canvas.actor.player.setName(playerName);
                         break;
                     case 32:                    // space bar
-                        System.out.println(canvas.actor.player.getName());
                         canvas.isGameMode = !canvas.isGameMode;
                         canvas.actor.isGameMode = !canvas.actor.isGameMode;
                         canvas.actor.score = 0;
+                        canvas.actor.player.setName(playerName);
                         break;
                     case 39:
                         canvas.actor.player.isRight = true;
@@ -136,9 +137,7 @@ public class Control {
                 f.remove(idTf);
                 f.remove(btn);
 
-                canvas.init();
                 canvas.actor.player.setName(playerName);
-                
             
                 initGame(canvas);
             }

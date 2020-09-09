@@ -51,8 +51,8 @@ public class GameCanvas extends Canvas {
         TimeThread th1 = new TimeThread();
         th1.start();
 
-        // ScoreThread th2 = new ScoreThread();
-        // th2.start();
+        ScoreThread th2 = new ScoreThread();
+        th2.start();
     }
 
 
@@ -154,6 +154,12 @@ public class GameCanvas extends Canvas {
         FontMetrics fontMetrics2 = g2.getFontMetrics();
         String s2 = "다시 플레이 하시려면 Y 를 누르시오";
         g2.drawString(s2, this.canvasX / 2 - fontMetrics2.stringWidth(s2) / 2, this.canvasY * 3 / 4);
+
+        int y = 200;
+        for (String line : this.data.printScoreboard().split("\n")) {
+            int x = this.canvasX / 2 - 50;
+            g2.drawString(line, x, y += g2.getFontMetrics().getHeight());
+        }
     }
 
     public int returnScore() {
@@ -220,7 +226,7 @@ public class GameCanvas extends Canvas {
         }
     }
 
-    /**  
+    // /**  
     class ScoreThread extends Thread {
         String scoreboard = "";
         String playerName = "";
@@ -236,8 +242,8 @@ public class GameCanvas extends Canvas {
                             playerName = actor.player.getName();
                             if (!playerName.equals("")) {
                                 // 플레이어 이름이 있다면,
-                                data.addScore(actor.score);
-                                // System.out.println(actor.player.getName() + "   " + actor.score);
+                                data.addScore(playerName, actor.score);
+                                System.out.println(actor.player.getName() + "   " + actor.score);
                             }
                             
                             data.readScore();
@@ -247,7 +253,7 @@ public class GameCanvas extends Canvas {
                                 //만약 아무 데이터 없다면.
                                 scoreboard = "";
                             }
-                            // System.out.println(scoreboard);
+                            System.out.println(scoreboard);
 
                             data.isSaved = true;
                         }
@@ -266,5 +272,5 @@ public class GameCanvas extends Canvas {
             }
         }
     }
-    */
+    // */
 }

@@ -10,32 +10,30 @@ import java.util.Collections;
 
 public class SaveData {
     private String dir = "./data/score.txt";
-    public ArrayList<Integer> scoreboard = new ArrayList<>();
+    private ArrayList<Integer> scoreboard = new ArrayList<>();
+    private ArrayList<String> names = new ArrayList<>();
     public boolean isSaved = false;
 
-    public String text(int score) {
-        addScore(score);
-        readScore();
-        return printScoreboard();
-    }
-
     public void readScore() {
+        String[] l;
         try {
 			// 한 줄씩 읽기
 			BufferedReader br = new BufferedReader(new FileReader(dir));
 			while (true) {
                 String line = br.readLine();
+
+                if (line == null)
+					break;
+
+                System.out.println(line);
+                l = line.split(":");
+                names.add(l[0]);
                 try {
-                    scoreboard.add(Integer.parseInt(line));
+                    scoreboard.add(Integer.parseInt(l[1]));
                 } catch (NumberFormatException e) {
                     System.out.println(line);
                 }
-
-				if (line == null)
-					break;
-				
-			}
-			br.close();
+            }
 		} catch (final FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -47,12 +45,11 @@ public class SaveData {
         sort();
     }
 
-    public void addScore(int score) {
+    public void addScore(String name, int score) {
         FileWriter fw;
-        System.out.println(score);
         try {
             fw = new FileWriter(dir, true);
-            fw.write(score + "\n");
+            fw.write(name + ":" + score + "\n");
             fw.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -72,13 +69,13 @@ public class SaveData {
             for (int i = 1; i <= 10; i ++) {
                 s += i + "등 : ";
                 score = this.scoreboard.get(this.scoreboard.size() - i);
-                s += score + "\n";
+                s += score + "점\n";
             }
         } else {
-            for (int i = 0; i < this.scoreboard.size(); i++) {
+            for (int i = 1; i <= this.scoreboard.size(); i++) {
                 s += i + "등 : ";
                 score = this.scoreboard.get(this.scoreboard.size() - i);
-                s += score + "\n";
+                s += score + "점\n";
             }
         }
         

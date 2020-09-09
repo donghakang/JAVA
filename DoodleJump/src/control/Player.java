@@ -30,7 +30,7 @@ public class Player extends Physics {
         this.isRight = false;
         this.isLeft = false;
         this.isFalling = true;
-        this.name = "";
+        this.name = "NO";
     }
 
     public String getName() {
