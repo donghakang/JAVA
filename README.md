@@ -45,6 +45,7 @@
     - [Collections 컬렉션](#collections-컬렉션)
     - [Java DataBase Connectivity](#java-database-connectivity)
     - [AWT](#awt)
+    - [IO](#io)
 
 ---
 
@@ -192,7 +193,8 @@ ex)if, for, try, extends.......
 ---
 
 ### 변수/상수
-    1. 변수
+
+1. 변수
 기본데이타형변수 / 참조형변수
 (primitive type)      (reference type)
 
@@ -1359,4 +1361,82 @@ import java.awt.*;
 4. 이벤트 : 마우스나 키보드등을 이용해서 사용자로부터 입력이 일어나는것
    1. 이벤트소스 - 이벤트를 발생시킨 윈인이 되는 컴포넌트
    2. 이벤트클래스
-   3. 이벤트핸들러- 해당하는 이벤트가 실행되었을때 실행될루틴
+   3. 이벤트핸들러 - 해당하는 이벤트가 실행되었을때 실행될루틴
+   <br>
+   * 발생시키는 이벤트
+
+    |컴포넌트|발생시키는 이벤트 클래스|
+    |-|-|
+    |```Button```|```ActionEvent```|
+    |```Checkbox```|```ItemEvent```|
+    |```CheckboxMenuItem```|ItemEvent|
+    |```Choice```|```ItemEvent```|
+    |```Component```|```ComponentEvent```, ```FocusEvent```, ```KeyEvent```, ```MouseEvent```|
+    |```Container```|```ContainerEvent```|
+    |```List```|```ActionEvent```, ```ItemEvent```|
+    |```MenuItem```|```ActionEvent```|
+    |```Scrollbar```|```AdjustmentEvent```|
+    |```ScrollPane```|```AdjustmentEvent```|
+    |```TextComponent```|```TextEvent```|
+    |```TextField```|```ActionEvent```|
+    |```Window```|```WindowEvent```|
+   * 이벤트 리스터
+
+    |이벤트 클래스|리스너 인터페이스|리스너 메소드|
+    |---------|-------------|----------|
+    |```ActionEvent```|```ActionListener```|```actionPerformed(ActionEvent e)```|
+    |```AdjustmentEvent```|```AdjustmentListener```|```adjustmentValueChangeed(AdjustmentEvent e)```|
+    |```ComponentEvent```|```ComponentListener```|```componentHidden(ComponentEvent e)```<br>```componentMoved(ComponentEvent e)```<br>```componentResized(ComponentEvent e)```<br>```componentShown(ComponentEvent e)```|
+    |```FocusEvent```|```FocusListener```|```focusGained(FocusEvent e)```<br>```focusLost(FocusEvent e)```|
+    |```ItemEvent```|```ItemListener```|```itemStateChanged(ItemEvent e)```|
+    |```KeyEvent```|```keyListener```|```keyPressed(KeyEvent e)```<br>```keyReleased(KeyEvent e)```<br>```keyTyped(KeyEvent e)```|
+    |```MouseEvent```|```MouseListener```|```mouseClicked(MouseEvent e)```<br>```mouseEntered(MouseEvent e)```<br>```mousePressed(MouseEvent e)```|
+    ||```MouseMotionListener```|```mouseReleased(MouseEvent e)```<br>```mouseDragged(MouseEvent e)```<br>```mouseMoved(MouseEvent e)```|
+    |```TextEvent```|```TextListener```|```textValueChanged(TextEvent e)```|
+    |```WindowEvent```|```WindowListener```|```windowActivated(WindowEvent e)  //윈도우활성```<br>```windowClosed(WindowEvent e) //윈도우최소```<br>```windowClosing(WindowEvent e)    //윈도우종료```<br>```windowDeactived(WindowEvent e)  //윈도우비활성```<br>```windowIconified(WindowEvent e)  //윈도우아이콘화 ```<br>```windowDeiconified(WindowEvent e)//윈도우아이콘해제```<br>``` windowOpened(WindowEvent e)     //윈도우열기```
+
+    * 이벤트클래스 설명
+
+    |이벤트 클래스| 설 명|
+    |-|-|
+    |```ActionEvent```|버튼이 눌러졌거나 텍스트필드의 입력이 완료되었을때,<br>메뉴의 항목이 선택되었을 때,<br>  리스트의 항목이 더블클릭 되었을때 발생.|
+    |```AdjustmentEvent```|스크롤바의 버블이 움직일때 발생.|
+    |```ComponentEvent```|컴포넌트의 위치나 크기가 변경되었을 때, <br>또는 컴포넌트가 나타나거나 숨겨질 때 발생|
+    |```ContainerEvent```|컴포넌트가 컨테이너에 추가되거나 삭제되었을때 발생|
+    |```FocusEvent```|컴포넌트가 키보드로부터 입력을 받아들이기 위한 포커스를 획득하거나 잃었을때 발생.|
+    |```ItemEvent```|체크박스나 초이스,<br>리스트의 항목이 선택(한번클릭) 되었을 때 발생|
+    |```KeyEvent```|키보드로부터 입력이 있을때 발생|
+    |```MouseEvent```|사용자가 마우스 버튼을 누르거나 놓을때,<br>마우스가 컴포넌트 위로 들어가거나 나올 때,<br>또는 사용자가 마우스를 이동하거나 드래그 할때 발생|
+    |```TextEvent```|입력된 텍스트에 변경이 일어날때 발생|
+    |```WindowEvent```|윈도우가 열리거나 닫힐 때, 최소화하거나 최대화 할때,<br>윈도우 메뉴가 선택될 때 발생|
+
+---
+
+### IO
+
+> Java I/O (input output)
+
+1. 입/출력의 정의
+   - *외부에서 프로그램으로 들어오는 일을 입력이라고 하고 반대로 프로그램에서 나가는 일을 출력이라고 한다.
+   입출력 장치*
+     - 파일, 디스크
+     - 키보드, 모니터, 마우스
+     - 메모리
+     - 네트워크
+
+2. Stream(스트림)의 이해 
+   1. 자료의 입출력을 도와주는 중간 매개체로써 스트림은 데이터를 읽고 쓰기위한 공통된 방법을 제공한다.
+   2. 노드스트림(=바이트스트림): 데이터 저수지에 직접연결되어 있는 부분으로 대표적인 입력노드스트림은 *InputStream*. 출력스트림은 *OutputStream*
+   3. 필터스트림(=문자스트림): 예로 노드스트림을 통해 한글데이터를 직접가져올 경우 모두 깨져버리는데 깨지지 않도록 필터스트림을 주는데 대표적인 입력 필터 스트림은 *Reader*, 출력 필터 스트림은 *Writer가* 있다. (ex. InputStreamReader,  OuputStreamWriter) <br>
+   또다른 예로, 프로그램을 읽을때마다 노드스트림을 통해서 파일 등에 접근하기 때문에, 당연히 기다려야 하는 문제가 생길수밖에 없는데 이럴때 사용하는 것이 *BufferedReader*등이 있다. 이들은 필터스트림의 생성자에 노드스트림의 객체를 주어서 사용한다.
+   4. 스트림은 크게 두가지로 나눌 수있다. 
+      1. 문자 스트림 : 문자 단위로 처리함
+         - ```Reader``` : 입력용 문자 스트림
+         - ```Writer``` :   출력용 문자 스트림
+         - Reader나 Wrtier가 붙으면 문자스트림이라는 것을 알 수 있음
+
+      2. 바이트 스트림 : 바이트 단위로 처리함
+         - ```InputStream``` or ```OutputStream```
+
+3. 각 노드스트림에 연결할 수 있는 필터스트림이 따로 있는데 다음과 같다.
+
