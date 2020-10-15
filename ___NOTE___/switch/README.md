@@ -30,7 +30,6 @@ public static void main (String[] args) {
     }
 }
 ```
-
 1. break를 안쓰면, 밑에 다 작동된다
 2. default는 else 같은 역할을 한다.
 
