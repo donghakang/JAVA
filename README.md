@@ -1138,7 +1138,7 @@ if( a instanceof  CC)     // false
         |```contains()```|비교|
         |```remove()```|삭제|
         |```trimToSize()```|빈공간제거|
-
+        
 3. Map 인터페이스
    1. HashMap
        - 해쉬테이블처럼(키와 객체)쌍으로 저장 관리할수 있다.
